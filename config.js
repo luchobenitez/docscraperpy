@@ -13,7 +13,7 @@ config.headerReq = {
   'agentClass': 'Agent',
   'agentOptions': {
     'socksHost': 'localhost',
-    'socksPort': '9050' // Defaults to 1080.
+    'socksPort': '9050'
   },
   'pool': {
     'maxSockets': 10
@@ -21,16 +21,13 @@ config.headerReq = {
   'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
 }
 
-
 config.bodyHead = 'nro_cic=';
 config.ci = '0';
 config.bodyTrailer = '&recuperar=Recuperar&envio=ok';
 
 config.outputFile = 'ips.txt';
 
-config.interval = 10 * 1000; // 10 segundos
-
-config.totalCI = 1000000;
-config.currentCI = 1000000;
+config.totalCI = 7000000;
+config.queue = 30;
 
 module.exports = config;
