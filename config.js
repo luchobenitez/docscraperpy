@@ -27,8 +27,8 @@ config.ci = '0';
 config.bodyTrailer = '&recuperar=Recuperar&envio=ok';
 
 config.outputFile = 'ips.txt';
-
-config.totalCI = 7000000;
+// 7000000 CIs and down
+config.totalCI = process.argv[2];
 config.queue = 150;
 
 module.exports = config;
