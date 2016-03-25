@@ -59,9 +59,9 @@ var crawlCI = function (CI, callback){
         );
         if (json.ci != ''){
           fs.appendFileSync(config.outputFile,JSON.stringify(json, null, 4) + '\n');
-          successCI.push(CI);
+          successCI[0]=CI;
         } else {
-          failureCI.push(CI);
+          failureCI[0]=CI;
         }
       } else {
         console.log(error)
