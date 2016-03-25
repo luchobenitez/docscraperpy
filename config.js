@@ -16,8 +16,9 @@ config.headerReq = {
     'socksPort': '9050'
   },
   'pool': {
-    'maxSockets': 10
+    'maxSockets': 150
   },
+  'timeout': '120000',
   'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
 }
 
@@ -28,6 +29,6 @@ config.bodyTrailer = '&recuperar=Recuperar&envio=ok';
 config.outputFile = 'ips.txt';
 
 config.totalCI = 7000000;
-config.queue = 30;
+config.queue = 150;
 
 module.exports = config;

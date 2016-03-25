@@ -63,11 +63,11 @@ var crawlCI = function (CI, callback){
         } else {
           failureCI[0]=CI;
         }
+        callback(null,CI);
       } else {
         console.log(error)
         callback();
       }
-      callback(null,CI);
     }
   );
 }
