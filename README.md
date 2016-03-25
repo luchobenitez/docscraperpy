@@ -19,3 +19,8 @@ Now only scrap IPS docs as an example.
 # install
 Normal nodejs project
 You are at your own.
+
+# usage
+	$ npm start 7000000
+
+*7.000.000 and down is the CIs do you want to take*
