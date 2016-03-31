@@ -1,11 +1,11 @@
-const async = require("async");
-const fs = require('fs');
-const request = require('request');
-const cheerio = require('cheerio');
-const config = require('./config.js');
+const async = require("async"),
+      fs = require('fs'),
+      request = require('request'),
+      cheerio = require('cheerio'),
+      config = require('./config.js');
 
-var successCI = [];
-var failureCI = [];
+var successCI = [],
+    failureCI = [];
 
 var crawlCI = function (CI, callback){
   console.log ('crawlCI :'+CI);
@@ -46,7 +46,7 @@ var crawlCI = function (CI, callback){
               json.sexo = $(children[5]).text().trim();
               json.tipoAsegurado = $(children[6]).text().trim();
               json.beneficiariosActivos = $(children[7]).text().trim();
-            };
+            }
             if (i==5) {
               json.numeroPatronal = $(children[0]).text().trim();
               json.empleador = $(children[1]).text().trim();
@@ -57,7 +57,7 @@ var crawlCI = function (CI, callback){
             }
           }
         );
-        if (json.ci != ''){
+        if (json.ci !== ''){
           fs.appendFileSync(config.outputFile,JSON.stringify(json, null, 4) + '\n');
           successCI[0]=CI;
         } else {
@@ -65,12 +65,12 @@ var crawlCI = function (CI, callback){
         }
         callback(null,CI);
       } else {
-        console.log(error)
+        console.error(error);
         callback();
       }
     }
   );
-}
+};
 
 var crawlingQueue = async.queue(crawlCI, config.queue);
 
@@ -78,7 +78,7 @@ crawlingQueue.drain = function(){
     console.log('CI Asegurados :' + successCI);
     console.log('CI No Asegurados :' + failureCI);
     console.log('done');
-}
+};
 
 for (var i = 1; i <= config.totalCI; i++){
   crawlingQueue.push(i);

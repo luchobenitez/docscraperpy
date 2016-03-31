@@ -1,3 +1,5 @@
+[![bitHound Overall Score](https://www.bithound.io/github/carloscarvallo/docscraperpy/badges/score.svg)](https://www.bithound.io/github/carloscarvallo/docscraperpy)
+[![bitHound Code](https://www.bithound.io/github/carloscarvallo/docscraperpy/badges/code.svg)](https://www.bithound.io/github/carloscarvallo/docscraperpy)
 # docscraperpy
 Is a simple Document scraper for .py, anything we can find on the web about documents
 

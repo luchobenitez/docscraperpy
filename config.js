@@ -1,4 +1,4 @@
-var config = {}
+var config = {};
 
 config.urlReq = 'http://servicios.ips.gov.py/consulta_asegurado/comprobacion_de_derecho_externo.php';
 
@@ -20,7 +20,7 @@ config.headerReq = {
   },
   'timeout': '120000',
   'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
-}
+};
 
 config.bodyHead = 'nro_cic=';
 config.ci = '0';
